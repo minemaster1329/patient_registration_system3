@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>New patient data</h1>
+  <br>
+  <form action="AddNewPatientServlet" method="GET">
+      <p>PESEL: <input type="text" size="20" name="pesel"/></p>
+      <p>First name: <input type="text" size="20" name="firstname"/></p>
+      <p>Surname: <input type="text" size="20" name="surname"/></p>
+      <p>Middle name: <input type="text" size="20" name="middlename"/></p>
+      <p>Email name: <input type="text" size="20" name="email"/></p>
+      <p>Gender: <select name="gender"><option value="m">Male</option><option value="f">Female</option><option value="u">Unknown</option></select></p>
+      <br>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+  </form>
+</body>
+</html>

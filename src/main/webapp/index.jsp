@@ -7,9 +7,18 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
+<script>
+    window.onload = function(){
+
+    }
+</script>
 <h1><%= "Patient's registration system" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="hello-servlet">Get patients count</a>
+</br>
+<a href="patientsview-servlet">Show all patients</a>
+</br>
+<a href="new_patient_form.html">Add new patient</a>
 </body>
 </html>
