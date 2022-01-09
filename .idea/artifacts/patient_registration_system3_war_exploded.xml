@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="patient_registration_system3:war exploded">
-    <output-path>$PROJECT_DIR$/target/patient_registration_system3-1.0-SNAPSHOT</output-path>
+    <output-path>$PROJECT_DIR$/target/patient_registration_system3</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -21,7 +21,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/patient_registration_system3-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/patient_registration_system3/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="patient_registration_system3/web/Web" />
     </root>

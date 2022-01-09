@@ -1,4 +1,4 @@
-package org.patient_registration_system.patient_registration_system3;
+package org.patient_registration_system.patient_registration_system3.servlets;
 
 import org.patient_registration_system.patient_registration_system3.model.PatientRegistrationSystemDatabase;
 

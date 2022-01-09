@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="patient_registration_system3-1.0-SNAPSHOT.war">
+    <root id="archive" name="patient_registration_system3.war">
       <element id="artifact" artifact-name="patient_registration_system3:war exploded" />
     </root>
   </artifact>

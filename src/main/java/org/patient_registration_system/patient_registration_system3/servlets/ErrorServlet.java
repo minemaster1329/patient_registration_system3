@@ -1,4 +1,4 @@
-package org.patient_registration_system.patient_registration_system3;
+package org.patient_registration_system.patient_registration_system3.servlets;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.*;
+import java.util.stream.Collectors;
 
 import static java.nio.file.StandardOpenOption.CREATE;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
@@ -38,12 +39,15 @@ public class PatientRegistrationSystemDatabase {
     }
 
     public List<Person> getAllPatients(){
-        return patientArrayList.stream().toList();
+        return new ArrayList<>(patientArrayList);
     }
 
     public void initializeSingleton() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        patientArrayList = objectMapper.readValue(Paths.get("/home/stduser/patients.json").toFile(), new TypeReference<List<Person>>(){});
+        //Linux Only
+        patientArrayList = objectMapper.readValue(Paths.get("/home/payara/database/patients.json").toFile(), new TypeReference<List<Person>>(){});
+        //Windows Only
+        //patientArrayList = objectMapper.readValue(Paths.get("C:\jwiium\patients.json").toFile(), new TypeReference<List<Person>>(){});
     }
 
     public void saveDatabase() throws IOException {
@@ -51,7 +55,10 @@ public class PatientRegistrationSystemDatabase {
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         String data = objectMapper.writeValueAsString(patientArrayList);
-        OutputStream outputStream = Files.newOutputStream(Paths.get("/home/stduser/patients.json"), CREATE, TRUNCATE_EXISTING);
+        //Linux only
+        OutputStream outputStream = Files.newOutputStream(Paths.get("/home/payara/database/patients.json"), CREATE, TRUNCATE_EXISTING);
+        //Windows Only
+        //OutputStream outputStream = Files.newOutputStream(Paths.get("C:\jwiium\patients.json"), CREATE, TRUNCATE_EXISTING);
 
         outputStream.write(data.getBytes(StandardCharsets.UTF_8));
         outputStream.close();
