@@ -16,6 +16,6 @@
 <a href="patientsview-servlet">Show all patients</a>
 </br>
 <a href="new_patient_form.html">Add new patient</a>
-<p>DX</p>
+<p>XD</p>
 </body>
 </html>
