@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.patient_registration_system.patient_registration_system3.model.data_models.Person;
+import org.patient_registration_system.patient_registration_system3.model.exceptions.DuplicatePatientIdException;
 
 import javax.swing.plaf.IconUIResource;
 import java.io.IOException;
@@ -64,7 +65,8 @@ public class PatientRegistrationSystemDatabase {
         outputStream.close();
     }
 
-    public boolean addNewPatient(Person person){
+    public boolean addNewPatient(Person person) throws DuplicatePatientIdException{
+        if (patientWithIdExists(person.getId())) throw new DuplicatePatientIdException("Patient with this id already exists");
         patientArrayList.add(person);
         try {
             saveDatabase();
@@ -73,5 +75,9 @@ public class PatientRegistrationSystemDatabase {
         catch (Exception e){
             return false;
         }
+    }
+
+    public boolean patientWithIdExists(String id){
+        return patientArrayList.stream().anyMatch((p)->p.getId().equals(id));
     }
 }

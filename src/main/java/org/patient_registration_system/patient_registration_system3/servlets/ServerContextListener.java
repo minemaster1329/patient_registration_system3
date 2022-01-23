@@ -1,6 +1,7 @@
 package org.patient_registration_system.patient_registration_system3.servlets;
 
 import org.patient_registration_system.patient_registration_system3.model.PatientRegistrationSystemDatabase;
+import org.patient_registration_system.patient_registration_system3.model.PatientRegistrationSystemMySQLDatabaseSingleton;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,12 +15,7 @@ public class ServerContextListener implements ServletContextListener, HttpSessio
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        try{
-            PatientRegistrationSystemDatabase.getInstance().initializeSingleton();
-        }
-        catch (Exception e) {
-            sce.getServletContext().setAttribute("Error", e.getMessage());
-        }
+
     }
 
     @Override
